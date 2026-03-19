@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "MapFilter Pro",
+  "version": "2.0.0",
+  "description": "Advanced business filters for Google Maps.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://www.google.com/maps/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+  {
+    "matches": ["https://www.google.com/maps/*"],
+    "js": ["content.js"],
+    "css": ["content2.css"],
+    "run_at": "document_idle"
+  }
+],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
