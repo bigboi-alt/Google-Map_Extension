@@ -5,7 +5,6 @@ document.getElementById('go').onclick = () => {
         await chrome.tabs.sendMessage(tab.id, { action: 'togglePanel' });
       } catch (e) {
         await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'] });
-        await chrome.scripting.insertCSS({ target: { tabId: tab.id }, files: ['content.css'] });
       }
       window.close();
     } else {
